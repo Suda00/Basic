@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>f2bdbe09-9651-4f7a-ab8c-1a2da1222a35</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>83265c90-e23c-46d3-a539-a26c7412ec33</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dds;dlg;fbx;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{32312395-978a-40f8-b975-a51e95dcba18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{3ee424d5-58b6-4402-9cea-ddd34c1f6759}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Scenes">
+      <UniqueIdentifier>{92a95128-0d68-4285-b63a-44a52c5ab70d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{5cb25f81-bfac-4409-8453-75cecab99415}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SomeCommon">
+      <UniqueIdentifier>{e10a6d41-8149-452a-9a66-9b7a019cccc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{25523496-6dd9-4e36-bb68-1c93c47ff4f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collison">
+      <UniqueIdentifier>{bd54224c-8d18-4acd-871a-f01f7e08c9ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collison\基底クラス">
+      <UniqueIdentifier>{ea11c089-d951-445b-b566-2e3a48d55adb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DesignPattern">
+      <UniqueIdentifier>{e8f71802-0451-4558-9586-bd70114a3c42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Move">
+      <UniqueIdentifier>{68a0b3df-bfc4-4ada-a435-94229fa2d34b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="StepTimer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceResources.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\GameContext.h">
+      <Filter>SomeCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Projection.h">
+      <Filter>SomeCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Utilities.h">
+      <Filter>SomeCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scenes\GameScene.h">
+      <Filter>Scene\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scenes\SceneBase.h">
+      <Filter>Scene\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scenes\TitleScene.h">
+      <Filter>Scene\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugCamera.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="GridFloor.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scenes\PauseScene.h">
+      <Filter>Scene\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Collision\Collider.h">
+      <Filter>Collison\基底クラス</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Object\ModelObject.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Object\Object.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\DesignPattern\Singleton.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Camera\FixCamera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Camera\FollowCamera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Move\Move.h">
+      <Filter>Move</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="DeviceResources.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scenes\GameScene.cpp">
+      <Filter>Scene\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scenes\TitleScene.cpp">
+      <Filter>Scene\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugCamera.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GridFloor.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scenes\PauseScene.cpp">
+      <Filter>Scene\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Collision\Collider.cpp">
+      <Filter>Collison\基底クラス</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Object\ModelObject.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Object\Object.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Camera\FixCamera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Camera\FollowCamera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Move\Move.cpp">
+      <Filter>Move</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="directx.ico">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="settings.manifest">
+      <Filter>Assets</Filter>
+    </Manifest>
+  </ItemGroup>
+</Project>

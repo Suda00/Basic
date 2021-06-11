@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\</FILEPATH>
+      <FILENAME>stdio.h</FILENAME>
+      <LINE>1850</LINE>
+      <COLUMN>5</COLUMN>
+    </SFA>
+    <DEFECTCODE>28205</DEFECTCODE>
+    <DESCRIPTION>'sprintf_s': _Success_ または _On_failure_ が無効なコンテキスト内で使用されています: _On_failure_ には _Success_ が必要です。</DESCRIPTION>
+    <FUNCTION></FUNCTION>
+    <DECORATED></DECORATED>
+    <FUNCLINE>0</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>
