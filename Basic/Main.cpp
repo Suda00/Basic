@@ -49,6 +49,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
 
     g_game = std::make_unique<Game>();
 
+	g_game->SetWindowMode(s_fullscreen);
+
     // Register class and create window
     {
         // Register class

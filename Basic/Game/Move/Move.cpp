@@ -40,7 +40,8 @@ void Move::AddForce(float force, DirectX::SimpleMath::Quaternion angle)
 
 	dir = DirectX::SimpleMath::Vector3::Transform(dir, angle);
 
-	//F = ma（F：力、m：質量、a：加速度）
+	// 運動の法則
+	// F = ma（F：力、m：質量、a：加速度）
 	m_acceleration = dir * (force / m_owner->GetWeight());
 
 	m_velocity += m_acceleration;
@@ -50,38 +51,8 @@ void Move::AddForce(float force, DirectX::SimpleMath::Quaternion angle)
 //※自身を中心とした回転のみ
 void Move::Moving()
 {
-	//回転角の更新
-	DirectX::SimpleMath::Vector3 axisY(0.0f,1.0f,0.0f);
-	DirectX::SimpleMath::Quaternion targetRot = DirectX::SimpleMath::Quaternion::CreateFromAxisAngle(axisY, m_targetAngle);
-	//回転補間
-	DirectX::SimpleMath::Quaternion retRot = DirectX::SimpleMath::Quaternion::Slerp(m_owner->GetQuaternion(), targetRot, 0.1f);
-
-	//ポジションの更新
-	DirectX::SimpleMath::Vector3 pos(DirectX::SimpleMath::Vector3::Zero);
-
-	//追従する物があるなら
-	if (m_parent != nullptr) {
-		//位置を追従する物に合わせる
-		pos = m_parent->GetPosition() + m_owner->GetFollowPosition();
-
-		//親の回転を加える
-		retRot *= m_parent->GetQuaternion();
-
-	}
-	//ないなら
-	else {
-		//速度の分を移動
-		pos = m_owner->GetPosition() + m_velocity;
-	}
-
-	//位置を回転に合わせる
-	pos = DirectX::SimpleMath::Vector3::Transform(pos, retRot);
-
-	//回転(自転)の更新
-	m_owner->SetQuaternion(retRot);
 	//位置の更新
-	m_owner->SetPosition(pos);
-
+	m_owner->SetPosition(m_owner->GetPosition() + m_velocity);
 }
 
 //追従を解除する

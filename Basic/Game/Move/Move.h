@@ -32,6 +32,7 @@ public:
 	void Update(float elapsedTime);
 
 	void AddForce(float force, DirectX::SimpleMath::Quaternion angle);
+	void Transform(DirectX::SimpleMath::Vector3 velocity);
 
 	void Moving();
 	void ReleaseParent();

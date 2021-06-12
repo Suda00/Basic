@@ -171,6 +171,7 @@
     <ClInclude Include="Game\Object\ModelObject.h" />
     <ClInclude Include="Game\Object\Object.h" />
     <ClInclude Include="GridFloor.h" />
+    <ClInclude Include="Parameter.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\Scenes\GameScene.h" />
@@ -204,6 +205,7 @@
     </ClCompile>
     <ClCompile Include="GridFloor.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Parameter.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

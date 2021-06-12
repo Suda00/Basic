@@ -33,3 +33,6 @@
 
 *.opendb
 *.ipch
+*.vcxproj
+*.suo
+*.db

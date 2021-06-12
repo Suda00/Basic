@@ -27,6 +27,7 @@ Game::Game()
 // Initialize the Direct3D resources required to run.
 void Game::Initialize(HWND window, int width, int height)
 {
+
 	//マウスの作成
 	m_pMouse = std::make_unique<Mouse>();
 	m_pMouse->SetWindow(window);
@@ -50,6 +51,7 @@ void Game::Initialize(HWND window, int width, int height)
 
     m_deviceResources->CreateWindowSizeDependentResources();
     CreateWindowSizeDependentResources();
+
 
 
 	m_pSceneManager = std::make_unique<SceneManager>();
@@ -186,8 +188,12 @@ void Game::OnWindowSizeChanged(int width, int height)
 void Game::GetDefaultSize(int& width, int& height) const
 {
     // TODO: Change to desired default window size (note minimum size is 320x200).
-    width = 800;
-    height = 600;
+    width = SCREEN_W;
+    height = SCREEN_H;
+
+	// 画面のサイズ倍率
+	m_windowMagnification.x = (float)MAX_SCREEN_W / (float)SCREEN_W;
+	m_windowMagnification.y = (float)MAX_SCREEN_H / (float)SCREEN_H;
 }
 #pragma endregion
 

@@ -20,6 +20,22 @@
 // provides a game loop.
 class Game : public DX::IDeviceNotify
 {
+private:	// 静的メンバ
+	// 画面サイズ
+	static const int SCREEN_W = 1280;
+	static const int SCREEN_H = 720;
+
+	// 最大画面サイズ
+	static const int MAX_SCREEN_W = 1920;
+	static const int MAX_SCREEN_H = 1080;
+
+	// 画面モード
+	static bool m_screenMode;
+
+	//画面の倍率
+	static DirectX::SimpleMath::Vector2 m_windowMagnification;
+
+
 public:
 
     Game();
@@ -44,6 +60,13 @@ public:
 
     // Properties
     void GetDefaultSize( int& width, int& height ) const;
+
+	//画面モードを獲得する
+	static void SetWindowMode(bool mode) { m_screenMode = mode; }
+	static bool GetWindowMode() { return m_screenMode; }
+
+	static DirectX::SimpleMath::Vector2 GetWindowMagnification() { return m_windowMagnification; }
+
 
 private:
 
