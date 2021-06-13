@@ -12,3 +12,8 @@ inline constexpr const T& Clamp(const T& v, const T& low, const T high)
 
 	return std::min(std::max(v, low), high);
 }
+
+template<class T>
+inline constexpr const T& Leap(const T& start, const T& end, const T time) {
+	return start + t * (end - start);
+}

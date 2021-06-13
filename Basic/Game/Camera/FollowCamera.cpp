@@ -1,11 +1,13 @@
-#include "../../pch.h"
+ï»¿#include "../../pch.h"
 #include "FollowCamera.h"
+#include "../../Game.h"
+#include "../../Common/Utilities.h"
 
 
-using namespace DirectX;
-using namespace DirectX::SimpleMath;
 
 FollowCamera::FollowCamera()
+	: m_posFollowSpeed(1.f)
+	, m_rotFollowSpeed(1.f)
 {
 }
 
@@ -14,78 +16,118 @@ FollowCamera::~FollowCamera()
 {
 }
 
-
-void FollowCamera::Initialize(float fov, float aspect)
+/*/------------------åˆæœŸåŒ–é–¢æ•°------------------/*/
+// å¼•æ•°1 Object * target : ã‚«ãƒ¡ãƒ©ã®è¿½å¾“ã™ã‚‹ã‚‚ã®ã€€ 
+// å¼•æ•°2 float destance  : ã‚«ãƒ¡ãƒ©é–“ã®è·é›¢		  
+// å¼•æ•°3 float eyeHeight : ç›®ç·šã®é«˜ã•ã€€ 
+// å¼•æ•°4 float rot		 : æ°´å¹³è§’åº¦	ã€€
+// å¼•æ•°5 float height	 : ä¸Šä¸‹è§’åº¦	  
+void FollowCamera::Initialize(Object * target, float distance, float height, DirectX::SimpleMath::Vector3 rotation)
 {
-	//ƒjƒAƒNƒŠƒbƒv(‹ß‹——£•\¦‰Â”\”ÍˆÍ)
+	//ãƒ‹ã‚¢ã‚¯ãƒªãƒƒãƒ—(è¿‘è·é›¢è¡¨ç¤ºå¯èƒ½ç¯„å›²)
 	float nearPlane = 0.01f;
-	//ƒtƒ@[ƒNƒŠƒbƒv(‰“‹——£•\¦‰Â”\”ÍˆÍ)
+	//ãƒ•ã‚¡ãƒ¼ã‚¯ãƒªãƒƒãƒ—(é è·é›¢è¡¨ç¤ºå¯èƒ½ç¯„å›²)
 	float farPlane = 1000.0f;
 
-	//‰Šú’lİ’è
-	m_target = DirectX::SimpleMath::Vector3(0.0f, 0.0f, 0.0f);
-	m_refTargetPos = m_target;//QÆ’‹“_‰Šú‰»
-	m_eye = DirectX::SimpleMath::Vector3(0.0f, 1.0f, 3.0f);
-	m_refEyePos = m_eye;//QÆ‹“_‰Šú‰»
-	DirectX::SimpleMath::Vector3 up(0, 1.0f, 0);
+	// å¼•æ•°ã®ä»£å…¥
+	m_targetObj = target;						// è¿½å¾“å¯¾è±¡
+	m_targetDistance = m_distance = distance;	// ã‚«ãƒ¡ãƒ©é–“è·é›¢
+	m_targetHeight = m_height = height;			// è¦–ç·šã®é«˜ã•
+	m_targetRotation = m_rotation = rotation;	// ã‚«ãƒ¡ãƒ©ã®å›è»¢è§’åº¦
 
-	//ƒrƒ…[s—ñ‰Šú‰»
-	m_viewMatrix =
-		DirectX::SimpleMath::Matrix::CreateLookAt(
-			m_eye,
-			m_target,
-			up);
-
-	m_projectionMatrix = DirectX::SimpleMath::Matrix::CreatePerspectiveFieldOfView(
-		DirectX::XMConvertToRadians(45.0f),
-		800 / 600,
-		nearPlane,
-		farPlane);
-	
+	m_up = DirectX::SimpleMath::Vector3(0, 1.0f, 0);
 
 
-	m_projectionMatrix = Matrix::CreatePerspectiveFieldOfView(
-		fov,
-		aspect,
-		nearPlane,
-		farPlane
-	);
+	//ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’è¨­å®šã™ã‚‹
+	DirectX::SimpleMath::Vector3 targetPos;
+
+	if (m_targetObj == nullptr) targetPos = DirectX::SimpleMath::Vector3::Zero;
+	else targetPos = m_targetObj->GetPosition() + m_up * m_targetHeight;
+
+
+	// ã‚«ãƒ¡ãƒ©é–“ã®è·é›¢
+	DirectX::SimpleMath::Vector3 offset = DirectX::SimpleMath::Vector3::Zero;
+	offset.x +=  sin(DirectX::XMConvertToRadians(m_targetRotation.y)) * cos(DirectX::XMConvertToRadians(m_targetRotation.x)) * m_targetDistance;
+	offset.z += -cos(DirectX::XMConvertToRadians(m_targetRotation.y)) * cos(DirectX::XMConvertToRadians(m_targetRotation.x)) * m_targetDistance;
+	offset.y +=  sin(DirectX::XMConvertToRadians(m_targetRotation.x)) * m_targetDistance;
+
+	// ã‚«ãƒ¡ãƒ©ä½ç½®ã®è¨­å®š
+	m_eye = targetPos + offset;
 
 
 
+	float aspect = static_cast<float>(Game::SCREEN_W) / static_cast<float>(Game::SCREEN_H);
+	float fov = DirectX::XMConvertToRadians(45.0f);
+
+	//ãƒ“ãƒ¥ãƒ¼è¡Œåˆ—åˆæœŸåŒ–
+	m_viewMatrix = DirectX::SimpleMath::Matrix::CreateLookAt(m_eye, targetPos, m_up);
+	// ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ã‚·ãƒ§ãƒ³è¡Œåˆ—ã®è¨­å®š
+	m_projectionMatrix = DirectX::SimpleMath::Matrix::CreatePerspectiveFieldOfView(fov, aspect, nearPlane, farPlane);
 }
 
-void FollowCamera::Update()
+void FollowCamera::Update(float elapsedTime)
 {
-	//’Ç]‘¬“xF‚P”{
-	m_eye += (m_refEyePos - m_eye) * 1.0f;
-	m_target += (m_refTargetPos - m_target) * 1.f;
 
-	m_viewMatrix = Matrix::CreateLookAt(m_eye, m_target, m_up);
+	// è¿½å¾“é€Ÿåº¦
+	float rotRate = Clamp(elapsedTime * 100.f / m_rotFollowSpeed, 0.f, 1.0f);
+	float posRate = Clamp(elapsedTime * 100.f / m_posFollowSpeed, 0.f, 1.0f);
+
+	// ç§»å‹•ã—ãŸå¯¾è±¡ã¸è¿½å¾“
+	m_targetDistance = Leap(m_targetDistance, m_distance, posRate);
+	m_targetRotation = DirectX::SimpleMath::Vector3::Lerp(m_targetRotation, m_rotation, rotRate);
+	m_targetHeight = Leap(m_targetHeight, m_height, posRate);
+
+
+	//ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’è¨­å®šã™ã‚‹
+	DirectX::SimpleMath::Vector3 targetPos;
+
+	if (m_targetObj == nullptr) targetPos = DirectX::SimpleMath::Vector3::Zero;
+	else targetPos = m_targetObj->GetPosition() + m_up * m_targetHeight;
+
+	// ã‚«ãƒ¡ãƒ©é–“ã®è·é›¢
+	DirectX::SimpleMath::Vector3 offset = DirectX::SimpleMath::Vector3::Zero;
+	offset.x +=  sin(DirectX::XMConvertToRadians(m_targetRotation.y)) * cos(DirectX::XMConvertToRadians(m_targetRotation.x)) * m_targetDistance;
+	offset.z += -cos(DirectX::XMConvertToRadians(m_targetRotation.y)) * cos(DirectX::XMConvertToRadians(m_targetRotation.x)) * m_targetDistance;
+	offset.y +=  sin(DirectX::XMConvertToRadians(m_targetRotation.x)) * m_targetDistance;
+
+	// ã‚«ãƒ¡ãƒ©ä½ç½®ã®è¨­å®š
+	m_eye = targetPos + offset;
+
+
+	m_viewMatrix = DirectX::SimpleMath::Matrix::CreateLookAt(m_eye, targetPos, m_up);
+
+
 
 }
 
 /*
-//–¼@@FƒXƒNƒŠ[ƒ“À•W‚ğƒ[ƒ‹ƒhÀ•W‚É•ÏŠ·‚·‚és—ñ‚ğì¬‚·‚éŠÖ”
-//ˆø”@Fint screen_w@		ƒXƒNƒŠ[ƒ“‚Ì•
-//ˆø”@Fint screen_h@		ƒXƒNƒŠ[ƒ“‚Ì‚‚³
-//•Ô‚è’lFinvS * invP * invV	‹tÀ•W
+//åã€€ã€€ï¼šã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ã‚’ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã«å¤‰æ›ã™ã‚‹è¡Œåˆ—ã‚’ä½œæˆã™ã‚‹é–¢æ•°
+//å¼•æ•°ã€€ï¼šint screen_wã€€		ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã®å¹…
+//å¼•æ•°ã€€ï¼šint screen_hã€€		ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã®é«˜ã•
+//è¿”ã‚Šå€¤ï¼šinvS * invP * invV	é€†åº§æ¨™
 */
-Matrix FollowCamera::CreateMatrix_Screen2World(int screen_w, int screen_h)
+DirectX::SimpleMath::Matrix FollowCamera::CreateMatrix_Screen2World(int screen_w, int screen_h)
 {
-	// ƒrƒ…[ƒ|[ƒgƒXƒP[ƒŠƒ“ƒOs—ñ‚ğì¬
-	Matrix viewport;
-	viewport._11 = screen_w / 2.0f;
-	viewport._22 = -screen_h / 2.0f;
-	viewport._41 = screen_w / 2.0f;
-	viewport._42 = screen_h / 2.0f;
+	int screen_x = screen_w;
+	int screen_y = screen_h;
+	if (Game::GetWindowMode()) {
+		screen_x = static_cast<int>(static_cast<float>(screen_x) * Game::GetWindowMagnification().x);
+		screen_y = static_cast<int>(static_cast<float>(screen_y) * Game::GetWindowMagnification().y);
+	}
 
-	// ‹ts—ñ‚ğì¬
-	Matrix invS = viewport.Invert();
-	Matrix invP = m_projectionMatrix.Invert();
-	Matrix invV = m_viewMatrix.Invert();
+	// ãƒ“ãƒ¥ãƒ¼ãƒãƒ¼ãƒˆã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°è¡Œåˆ—ã‚’ä½œæˆ
+	DirectX::SimpleMath::Matrix viewport;
+	viewport._11 = screen_x / 2.0f;
+	viewport._22 = -screen_y / 2.0f;
+	viewport._41 = screen_x / 2.0f;
+	viewport._42 = screen_y / 2.0f;
 
-	// wƒrƒ…[ƒ|[ƒgƒXƒP[ƒŠƒ“ƒOs—ñ‚Ì‹ts—ñx ~ wË‰es—ñ‚Ì‹ts—ñx ~ wƒrƒ…[s—ñ‚Ì‹ts—ñx
+	// é€†è¡Œåˆ—ã‚’ä½œæˆ
+	DirectX::SimpleMath::Matrix invS = viewport.Invert();
+	DirectX::SimpleMath::Matrix invP = m_projectionMatrix.Invert();
+	DirectX::SimpleMath::Matrix invV = m_viewMatrix.Invert();
+
+	// ã€ãƒ“ãƒ¥ãƒ¼ãƒãƒ¼ãƒˆã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°è¡Œåˆ—ã®é€†è¡Œåˆ—ã€ Ã— ã€å°„å½±è¡Œåˆ—ã®é€†è¡Œåˆ—ã€ Ã— ã€ãƒ“ãƒ¥ãƒ¼è¡Œåˆ—ã®é€†è¡Œåˆ—ã€
 	return invS * invP * invV;
 }
 

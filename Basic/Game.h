@@ -20,11 +20,12 @@
 // provides a game loop.
 class Game : public DX::IDeviceNotify
 {
-private:	// 静的メンバ
+public:		// 静的メンバ
 	// 画面サイズ
 	static const int SCREEN_W = 1280;
 	static const int SCREEN_H = 720;
 
+private:	// 静的メンバ
 	// 最大画面サイズ
 	static const int MAX_SCREEN_W = 1920;
 	static const int MAX_SCREEN_H = 1080;

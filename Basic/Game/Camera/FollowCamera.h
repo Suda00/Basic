@@ -3,36 +3,48 @@
 //#define FOLLOW_CAMERA
 
 #include <SimpleMath.h>
+#include "../Object/Object.h"
 
 class FollowCamera
 {
 private:
+	// 追従対象のオブジェクト
+	Object* m_targetObj;
+
+	// カメラの移動の停止
+	bool m_enableFixed;
+	
 	//ビュー行列
 	DirectX::SimpleMath::Matrix m_viewMatrix;
 	//射影行列
 	DirectX::SimpleMath::Matrix m_projectionMatrix;
-	//視点
-	DirectX::SimpleMath::Vector3 m_eye;
-	//注視点
-	DirectX::SimpleMath::Vector3 m_target;
-	//ベクトル
+
+
+	//視点(カメラ位置)
+	DirectX::SimpleMath::Vector3 m_eye;	
+
+	//視線の高さ
 	DirectX::SimpleMath::Vector3 m_up;
+	// 目線の高さの倍率
+	float m_height, m_targetHeight;
 
-	// 参照視点
-	DirectX::SimpleMath::Vector3 m_refEyePos;
+	// カメラ間の距離	
+	float m_distance, m_targetDistance;
 
-	// 参照注視点
-	DirectX::SimpleMath::Vector3 m_refTargetPos;
+	// カメラの回転角度
+	DirectX::SimpleMath::Vector3 m_rotation, m_targetRotation;
 
-
+	// 位置追従速度と回転追従速度
+	float m_posFollowSpeed;
+	float m_rotFollowSpeed;
 
 public:
 	FollowCamera();
 	~FollowCamera();
 
 public:
-	void Initialize(float fov, float aspect);
-	void Update();
+	void Initialize(Object* target, float distance = 1.f, float height = 1.f, DirectX::SimpleMath::Vector3 rotation = DirectX::SimpleMath::Vector3::Zero);
+	void Update(float elapsedTime);
 
 
 	//アクセッサ
@@ -43,39 +55,6 @@ public:
 	//プロジェクション行列の取得
 	DirectX::SimpleMath::Matrix GetProjectionMatrix() {
 		return m_projectionMatrix;
-	}
-
-
-	//カメラの座標・注視点のアクセッサ(ゲッター・セッター)
-	DirectX::SimpleMath::Vector3 GetTargetPosition() {
-		return m_target;
-	}
-
-	void SetTargetPosition(DirectX::SimpleMath::Vector3 target) {
-		m_target = target;
-	}
-	DirectX::SimpleMath::Vector3 GetEyePosition() {
-		return m_eye;
-	}
-
-	void SetEyePosition(DirectX::SimpleMath::Vector3 eye) {
-		m_eye = eye;
-	}
-
-	//参照視点・参照注視点のアクセッサ(ゲッター・セッター)
-	DirectX::SimpleMath::Vector3 GetRefTargetPosition() {
-		return m_refTargetPos;
-	}
-
-	void SetRefTargetPosition(DirectX::SimpleMath::Vector3 reftarget) {
-		m_refTargetPos = reftarget;
-	}
-	DirectX::SimpleMath::Vector3 GetRefEyePosition() {
-		return m_refEyePos;
-	}
-
-	void SetRefEyePosition(DirectX::SimpleMath::Vector3 refeye) {
-		m_refEyePos = refeye;
 	}
 
 
