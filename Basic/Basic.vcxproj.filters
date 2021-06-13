@@ -84,9 +84,6 @@
     <ClInclude Include="Game\Collision\Collider.h">
       <Filter>Collison\基底クラス</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Object\ModelObject.h">
-      <Filter>Object</Filter>
-    </ClInclude>
     <ClInclude Include="Game\Object\Object.h">
       <Filter>Object</Filter>
     </ClInclude>
@@ -103,6 +100,9 @@
       <Filter>Move</Filter>
     </ClInclude>
     <ClInclude Include="Parameter.h" />
+    <ClInclude Include="Game\Object\GameObject.h">
+      <Filter>Object</Filter>
+    </ClInclude>
     <ClInclude Include="Game\Model\ModelStorage.h">
       <Filter>Model</Filter>
     </ClInclude>
@@ -135,9 +135,6 @@
     <ClCompile Include="Game\Collision\Collider.cpp">
       <Filter>Collison\基底クラス</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Object\ModelObject.cpp">
-      <Filter>Object</Filter>
-    </ClCompile>
     <ClCompile Include="Game\Object\Object.cpp">
       <Filter>Object</Filter>
     </ClCompile>
@@ -151,6 +148,9 @@
       <Filter>Move</Filter>
     </ClCompile>
     <ClCompile Include="Parameter.cpp" />
+    <ClCompile Include="Game\Object\GameObject.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
     <ClCompile Include="Game\Model\ModelStorage.cpp">
       <Filter>Model</Filter>
     </ClCompile>

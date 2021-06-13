@@ -169,7 +169,7 @@
     <ClInclude Include="Game\DesignPattern\Singleton.h" />
     <ClInclude Include="Game\Model\ModelStorage.h" />
     <ClInclude Include="Game\Move\Move.h" />
-    <ClInclude Include="Game\Object\ModelObject.h" />
+    <ClInclude Include="Game\Object\GameObject.h" />
     <ClInclude Include="Game\Object\Object.h" />
     <ClInclude Include="GridFloor.h" />
     <ClInclude Include="Parameter.h" />
@@ -200,7 +200,7 @@
     <ClCompile Include="Game\Move\Move.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../pch.h</PrecompiledHeaderFile>
     </ClCompile>
-    <ClCompile Include="Game\Object\ModelObject.cpp">
+    <ClCompile Include="Game\Object\GameObject.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="Game\Object\Object.cpp">

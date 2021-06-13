@@ -6,10 +6,10 @@
 //更新日：2021/05/27
 //
 #pragma once
-#include "ModelObject.h"
+#include "GameObject.h"
 
 
-class Object:public ModelObject
+class Object:public GameObject
 {
 private:
 	DirectX::SimpleMath::Vector3 m_velocity;		//速度
@@ -35,7 +35,6 @@ public:
 
 	void Move();								//移動
 
-	DirectX::SimpleMath::Vector3 GetFollowPosition() { return m_followPos; }
 
 	void AddForce(float force, DirectX::SimpleMath::Quaternion angle);
 	void AddSpeed(DirectX::SimpleMath::Vector3 speed);

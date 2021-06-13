@@ -7,6 +7,9 @@
 //
 #include "../../pch.h"
 #include "Object.h"
+#include "../../Common/GameContext.h"
+#include "../../DeviceResources.h"
+#include "../Camera/FollowCamera.h"
 
 
 Object::Object()
@@ -32,7 +35,7 @@ void Object::Update(float elapsedTime)
 
 void Object::Render()
 {
-	DX::DeviceResources* deviceResources = GameContext::Get<DX::DeviceResources>();
+	DX::DeviceResources* deviceResources = GameContext<DX::DeviceResources>::Get();
 	Camera* camera = gameWindow->GetCamera();
 
 	if (!gameWindow || !m_model || !m_displayFlag) return;

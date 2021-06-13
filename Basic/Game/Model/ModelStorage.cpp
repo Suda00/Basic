@@ -1,4 +1,4 @@
-#include "../../pch.h"
+ï»¿#include "../../pch.h"
 #include "ModelStorage.h"
 
 #include <CommonStates.h>
@@ -24,48 +24,48 @@ ModelStorage::~ModelStorage()
 	ReleaseInstance();
 }
 
-//ƒCƒ“ƒXƒ^ƒ“ƒX‚Ìæ“¾
+//ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®å–å¾—
 ModelStorage * ModelStorage::GetInstance()
 {
 	if (myInstance == nullptr)
 	{
-		//	ƒCƒ“ƒXƒ^ƒ“ƒX‚ªì‚ç‚ê‚Ä‚¢‚È‚¯‚ê‚ÎAV‚µ‚¢ƒCƒ“ƒXƒ^ƒ“ƒX‚ğì¬‚·‚é
+		//	ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãŒä½œã‚‰ã‚Œã¦ã„ãªã‘ã‚Œã°ã€æ–°ã—ã„ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œæˆã™ã‚‹
 		myInstance = new ModelStorage();
 	}
 
-	//	ì¬‚³‚ê‚Ä‚½ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ•Ô‚·
+	//	ä½œæˆã•ã‚Œã¦ãŸã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¿”ã™
 	return myInstance;
 }
 
-//	‚±‚ÌŠÖ”‚ğŒÄ‚ñ‚¾ŒãA‚à‚¤ˆê“xGetInstanceŠÖ”‚ğÀs‚·‚ê‚ÎA
-//@ƒf[ƒ^‚Ìì‚è’¼‚µiƒŠƒZƒbƒgj‚ª‰Â”\
+//	ã“ã®é–¢æ•°ã‚’å‘¼ã‚“ã å¾Œã€ã‚‚ã†ä¸€åº¦GetInstanceé–¢æ•°ã‚’å®Ÿè¡Œã™ã‚Œã°ã€
+//ã€€ãƒ‡ãƒ¼ã‚¿ã®ä½œã‚Šç›´ã—ï¼ˆãƒªã‚»ãƒƒãƒˆï¼‰ãŒå¯èƒ½
 void ModelStorage::ReleaseInstance()
 {
 	if (myInstance != nullptr)
 	{
-		//	ƒCƒ“ƒXƒ^ƒ“ƒX‚ªì¬‚³‚ê‚Ä‚¢‚ê‚ÎAíœ‚ğs‚¤
+		//	ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãŒä½œæˆã•ã‚Œã¦ã„ã‚Œã°ã€å‰Šé™¤ã‚’è¡Œã†
 		delete myInstance;
 		myInstance = nullptr;
 	}
 }
 
 
-//ƒ‚ƒfƒ‹‚Ì’Ç‰Á
+//ãƒ¢ãƒ‡ãƒ«ã®è¿½åŠ 
 void ModelStorage::AddModel(std::string name, wchar_t fileName)
 {
-	//ƒfƒoƒCƒX‚Ìæ“¾
-	ID3D11Device*          device = GameContext<DX::DeviceResources>::Get()->GetD3DDevice;
+	//ãƒ‡ãƒã‚¤ã‚¹ã®å–å¾—
+	ID3D11Device* device = GameContext<DX::DeviceResources>::Get()->GetD3DDevice;
 
-	// ”z—ñ“o˜^
+	// é…åˆ—ç™»éŒ²
 	m_pModel.insert(std::make_pair(name, std::make_unique<Model>()));
 
 
-	// ƒGƒtƒFƒNƒgƒtƒ@ƒNƒgƒŠ‚Ìì¬
+	// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆãƒ•ã‚¡ã‚¯ãƒˆãƒªã®ä½œæˆ
 	EffectFactory fx(device);
-	// ƒeƒNƒXƒ`ƒƒ‚Ì“Ç‚İ‚İƒpƒXw’è
+	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®èª­ã¿è¾¼ã¿ãƒ‘ã‚¹æŒ‡å®š
 	fx.SetDirectory(L"Resources/Models");
 
-	// ƒtƒ@ƒCƒ‹‚ğw’è‚µ‚Äƒ‚ƒfƒ‹ƒf[ƒ^“Ç‚İ‚İ
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æŒ‡å®šã—ã¦ãƒ¢ãƒ‡ãƒ«ãƒ‡ãƒ¼ã‚¿èª­ã¿è¾¼ã¿
 	m_pModel[name] = DirectX::Model::CreateFromCMO(device, &fileName, fx);
 }
 
