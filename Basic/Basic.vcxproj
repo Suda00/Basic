@@ -167,6 +167,7 @@
     <ClInclude Include="Game\Camera\FollowCamera.h" />
     <ClInclude Include="Game\Collision\Collider.h" />
     <ClInclude Include="Game\DesignPattern\Singleton.h" />
+    <ClInclude Include="Game\Model\ModelStorage.h" />
     <ClInclude Include="Game\Move\Move.h" />
     <ClInclude Include="Game\Object\ModelObject.h" />
     <ClInclude Include="Game\Object\Object.h" />
@@ -191,6 +192,9 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="Game\Collision\Collider.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="Game\Model\ModelStorage.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="Game\Move\Move.cpp">

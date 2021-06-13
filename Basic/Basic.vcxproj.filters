@@ -38,6 +38,9 @@
     <Filter Include="Move">
       <UniqueIdentifier>{68a0b3df-bfc4-4ada-a435-94229fa2d34b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{c22f338f-46e7-4d52-a52e-dde86b6daf34}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -100,6 +103,9 @@
       <Filter>Move</Filter>
     </ClInclude>
     <ClInclude Include="Parameter.h" />
+    <ClInclude Include="Game\Model\ModelStorage.h">
+      <Filter>Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -145,6 +151,9 @@
       <Filter>Move</Filter>
     </ClCompile>
     <ClCompile Include="Parameter.cpp" />
+    <ClCompile Include="Game\Model\ModelStorage.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />

@@ -100,6 +100,17 @@ void FollowCamera::Update(float elapsedTime)
 
 }
 
+// カメラ間距離の変更
+void FollowCamera::ChengeDistance(float magnification)
+{
+	m_distance *= 1.f - magnification;
+	m_distance = Clamp(m_distance, 0.01f, 1000.0f);
+}
+
+void FollowCamera::ChengeRotation()
+{
+}
+
 /*
 //名　　：スクリーン座標をワールド座標に変換する行列を作成する関数
 //引数　：int screen_w　		スクリーンの幅

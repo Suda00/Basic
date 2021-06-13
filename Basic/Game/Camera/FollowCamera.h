@@ -46,6 +46,8 @@ public:
 	void Initialize(Object* target, float distance = 1.f, float height = 1.f, DirectX::SimpleMath::Vector3 rotation = DirectX::SimpleMath::Vector3::Zero);
 	void Update(float elapsedTime);
 
+	void ChengeDistance(float magnification);
+	void ChengeRotation();
 
 	//アクセッサ
 	//ビュー行列の取得
