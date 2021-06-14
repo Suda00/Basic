@@ -1,5 +1,6 @@
 ﻿#include "../../pch.h"
 #include "FollowCamera.h"
+
 #include "../../Game.h"
 #include "../../Common/Utilities.h"
 
@@ -76,7 +77,6 @@ void FollowCamera::Update(float elapsedTime)
 	m_targetDistance = Leap(m_targetDistance, m_distance, posRate);
 	m_targetRotation = DirectX::SimpleMath::Vector3::Lerp(m_targetRotation, m_rotation, rotRate);
 	m_targetHeight = Leap(m_targetHeight, m_height, posRate);
-
 
 	//ターゲットを設定する
 	DirectX::SimpleMath::Vector3 targetPos;

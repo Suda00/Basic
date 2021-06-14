@@ -54,7 +54,7 @@ void ModelStorage::ReleaseInstance()
 void ModelStorage::AddModel(std::string name, wchar_t fileName)
 {
 	//デバイスの取得
-	ID3D11Device* device = GameContext<DX::DeviceResources>::Get()->GetD3DDevice;
+	ID3D11Device* device = GameContext<DX::DeviceResources>::Get()->GetD3DDevice();
 
 	// 配列登録
 	m_pModel.insert(std::make_pair(name, std::make_unique<Model>()));

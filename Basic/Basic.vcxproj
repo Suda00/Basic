@@ -171,6 +171,7 @@
     <ClInclude Include="Game\Move\Move.h" />
     <ClInclude Include="Game\Object\GameObject.h" />
     <ClInclude Include="Game\Object\Object.h" />
+    <ClInclude Include="Game\Object\ObjectPool.h" />
     <ClInclude Include="GridFloor.h" />
     <ClInclude Include="Parameter.h" />
     <ClInclude Include="pch.h" />
@@ -206,6 +207,9 @@
     <ClCompile Include="Game\Object\Object.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="Game\Object\ObjectPool.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="GridFloor.cpp" />
     <ClCompile Include="Main.cpp" />

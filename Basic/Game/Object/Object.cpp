@@ -1,19 +1,21 @@
-//.cpp
-//ƒQ[ƒ€“à‚É•K—v‚È’l‚ğ‚ÂObject‚ÌŠî’êƒNƒ‰ƒX
-//y”h¶æzPlayer‚È‚ÇƒQ[ƒ€‚ÅÀ‘Ô‚ğ‚ÂƒNƒ‰ƒXy•`‰æ‚Ì‚»‚Ìæ‚Öz
-//ì¬ÒF{“c@ƒqƒJƒ‹
-//ì¬“úF2021/05/26
-//XV“úF2021/05/27
+ï»¿//.cpp
+//ã‚²ãƒ¼ãƒ å†…ã«å¿…è¦ãªå€¤ã‚’æŒã¤Objectã®åŸºåº•ã‚¯ãƒ©ã‚¹
+//ã€æ´¾ç”Ÿå…ˆã€‘Playerãªã©ã‚²ãƒ¼ãƒ ã§å®Ÿæ…‹ã‚’æŒã¤ã‚¯ãƒ©ã‚¹ã€æç”»ã®ãã®å…ˆã¸ã€‘
+//ä½œæˆè€…ï¼šé ˆç”°ã€€ãƒ’ã‚«ãƒ«
+//ä½œæˆæ—¥ï¼š2021/05/26
+//æ›´æ–°æ—¥ï¼š2021/05/27
 //
 #include "../../pch.h"
 #include "Object.h"
+
+#include <CommonStates.h>
 #include "../../Common/GameContext.h"
 #include "../../DeviceResources.h"
 #include "../Camera/FollowCamera.h"
 
 
 Object::Object()
-	:ModelObject()
+	: GameObject()
 	, m_velocity(0.f, 0.f, 0.f)
 	, m_acceleration(DirectX::SimpleMath::Vector3::Zero)
 {
@@ -24,50 +26,44 @@ Object::~Object()
 {
 }
 
+// åˆæœŸåŒ–
 void Object::Initialize()
 {
 }
 
+// æ›´æ–°
 void Object::Update(float elapsedTime)
 {
 	m_velocity = DirectX::SimpleMath::Vector3::Zero;
 }
 
+// æç”»
 void Object::Render()
 {
-	DX::DeviceResources* deviceResources = GameContext<DX::DeviceResources>::Get();
-	Camera* camera = gameWindow->GetCamera();
-
-	if (!gameWindow || !m_model || !m_displayFlag) return;
-
-	// ƒ[ƒ‹ƒhs—ñ‚ğì¬
-	DirectX::SimpleMath::Matrix world = DirectX::SimpleMath::Matrix::CreateTranslation(m_pos);
-
-	// ƒ‚ƒfƒ‹‚Ì•`‰æ
-	m_model->Draw(deviceResources->GetD3DDeviceContext(), *GameContext::Get<DirectX::CommonStates>()
-		, world, camera->GetViewMatrix(), camera->GetProjectionMatrix());
-
 }
 
+// çµ‚äº†
 void Object::Finalize()
 {
 }
 
+// ç§»å‹•
 void Object::Move()
 {
 	DirectX::SimpleMath::Vector3 pos = GetPosition() + m_velocity;
 	SetPosition(pos);
 }
 
+// åŠ é€Ÿ
 void Object::AddForce(float force, DirectX::SimpleMath::Quaternion angle)
 {
-	//•ûŒü
+	//æ–¹å‘
 	DirectX::SimpleMath::Vector3 dir(0.f, 0.f, -1.f);
 
 	dir = DirectX::SimpleMath::Vector3::Transform(dir, angle);
 
-	// ‰^“®‚Ì–@‘¥
-	// F = maiFF—ÍAmF¿—ÊAaF‰Á‘¬“xj
+	// é‹å‹•ã®æ³•å‰‡
+	// F = maï¼ˆFï¼šåŠ›ã€mï¼šè³ªé‡ã€aï¼šåŠ é€Ÿåº¦ï¼‰
 	m_acceleration = dir * (force / GetWeight());
 
 	m_velocity += m_acceleration;
@@ -75,4 +71,5 @@ void Object::AddForce(float force, DirectX::SimpleMath::Quaternion angle)
 
 void Object::AddSpeed(DirectX::SimpleMath::Vector3 speed)
 {
+	m_velocity = speed;
 }

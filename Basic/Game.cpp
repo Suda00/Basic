@@ -1,4 +1,4 @@
-//
+ï»¿//
 // Game.cpp
 //
 
@@ -17,6 +17,9 @@ using namespace DirectX;
 
 using Microsoft::WRL::ComPtr;
 
+bool Game::s_screenMode = false;
+DirectX::SimpleMath::Vector2 Game::s_windowMagnification = DirectX::SimpleMath::Vector2::Zero;
+
 Game::Game()
 {
     m_deviceResources = std::make_unique<DX::DeviceResources>();
@@ -28,11 +31,11 @@ Game::Game()
 void Game::Initialize(HWND window, int width, int height)
 {
 
-	//ƒ}ƒEƒX‚Ìì¬
+	//ãƒã‚¦ã‚¹ã®ä½œæˆ
 	m_pMouse = std::make_unique<Mouse>();
 	m_pMouse->SetWindow(window);
 
-	//ƒL[ƒ{[ƒhì¬
+	//ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ä½œæˆ
 	m_pKeyboard = std::make_unique<Keyboard>();
 
 	m_deviceResources->SetWindow(window, width, height);
@@ -44,7 +47,7 @@ void Game::Initialize(HWND window, int width, int height)
 
 	auto device = m_deviceResources->GetD3DDevice();
 
-	//ƒRƒ‚ƒ“ƒXƒe[ƒgì¬
+	//ã‚³ãƒ¢ãƒ³ã‚¹ãƒ†ãƒ¼ãƒˆä½œæˆ
 	m_pState = std::make_unique<DirectX::CommonStates>(device);
 	GameContext<DirectX::CommonStates>::Register(m_pState);
 
@@ -191,9 +194,9 @@ void Game::GetDefaultSize(int& width, int& height) const
     width = SCREEN_W;
     height = SCREEN_H;
 
-	// ‰æ–Ê‚ÌƒTƒCƒY”{—¦
-	m_windowMagnification.x = (float)MAX_SCREEN_W / (float)SCREEN_W;
-	m_windowMagnification.y = (float)MAX_SCREEN_H / (float)SCREEN_H;
+	// ç”»é¢ã®ã‚µã‚¤ã‚ºå€ç‡
+	s_windowMagnification.x = (float)MAX_SCREEN_W / (float)SCREEN_W;
+	s_windowMagnification.y = (float)MAX_SCREEN_H / (float)SCREEN_H;
 }
 #pragma endregion
 
@@ -211,19 +214,19 @@ void Game::CreateDeviceDependentResources()
 void Game::CreateWindowSizeDependentResources()
 {
     // TODO: Initialize windows-size dependent objects here.
-	//ƒjƒAƒNƒŠƒbƒv(‹ß‹——£•\¦‰Â”\”ÍˆÍ)
+	//ãƒ‹ã‚¢ã‚¯ãƒªãƒƒãƒ—(è¿‘è·é›¢è¡¨ç¤ºå¯èƒ½ç¯„å›²)
 	float nearPlane = 0.01f;
-	//ƒtƒ@[ƒNƒŠƒbƒv(‰“‹——£•\¦‰Â”\”ÍˆÍ)
+	//ãƒ•ã‚¡ãƒ¼ã‚¯ãƒªãƒƒãƒ—(é è·é›¢è¡¨ç¤ºå¯èƒ½ç¯„å›²)
 	float farPlane = 1000.0f;
 
-	//ƒEƒBƒ“ƒhƒEƒTƒCƒY‚©‚çƒAƒXƒyƒNƒg”ä‚ğZo‚·‚é
+	//ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚ºã‹ã‚‰ã‚¢ã‚¹ãƒšã‚¯ãƒˆæ¯”ã‚’ç®—å‡ºã™ã‚‹
 	RECT size = m_deviceResources->GetOutputSize();
 	float aspectRaito = float(size.right) / float(size.bottom);
 
-	//‰æŠp‚ğİ’è
+	//ç”»è§’ã‚’è¨­å®š
 	float forAngleY = XMConvertToRadians(45.0f);
 
-	// Ë‰es—ñ‚ğì¬‚·‚é
+	// å°„å½±è¡Œåˆ—ã‚’ä½œæˆã™ã‚‹
 	m_projection = std::make_unique<Projection>();
 	m_projection->SetPerspectiveFieldOfView(
 		forAngleY,

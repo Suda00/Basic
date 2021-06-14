@@ -1,7 +1,9 @@
 ﻿  pch.cpp
+  Parameter.cpp
   Main.cpp
   GridFloor.cpp
   Game.cpp
+c:\users\s192187\documents\github\basic\basic\game.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
   DeviceResources.cpp
   DebugCamera.cpp
   C/C++ のコード分析を実行しています...
@@ -9,16 +11,18 @@
   TitleScene.cpp
   PauseScene.cpp
   GameScene.cpp
+  ObjectPool.cpp
   Object.cpp
-  ModelObject.cpp
+  GameObject.cpp
   Move.cpp
+  ModelStorage.cpp
   Collider.cpp
   FollowCamera.cpp
   FixCamera.cpp
   C/C++ のコード分析を実行しています...
   コードを生成中...
   SceneManager.cpp
-     ライブラリ C:\Users\s192187\Documents\Visual Studio 2015\Projects\学習\Basic2 - 予備\Debug\Basic.lib とオブジェクト C:\Users\s192187\Documents\Visual Studio 2015\Projects\学習\Basic2 - 予備\Debug\Basic.exp を作成中
-  Basic.vcxproj -> C:\Users\s192187\Documents\Visual Studio 2015\Projects\学習\Basic2 - 予備\Debug\Basic.exe
-  Basic.vcxproj -> C:\Users\s192187\Documents\Visual Studio 2015\Projects\学習\Basic2 - 予備\Debug\Basic.pdb (Full PDB)
+     ライブラリ C:\Users\s192187\Documents\GitHub\Basic\Debug\Basic.lib とオブジェクト C:\Users\s192187\Documents\GitHub\Basic\Debug\Basic.exp を作成中
+  Basic.vcxproj -> C:\Users\s192187\Documents\GitHub\Basic\Debug\Basic.exe
+  Basic.vcxproj -> C:\Users\s192187\Documents\GitHub\Basic\Debug\Basic.pdb (Full PDB)
 c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\stdio.h(1850): warning C28205: 'sprintf_s': _Success_ または _On_failure_ が無効なコンテキスト内で使用されています: _On_failure_ には _Success_ が必要です。

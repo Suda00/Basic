@@ -1,4 +1,4 @@
-//
+ï»¿//
 // Game.h
 //
 
@@ -20,21 +20,21 @@
 // provides a game loop.
 class Game : public DX::IDeviceNotify
 {
-public:		// Ã“Iƒƒ“ƒo
-	// ‰æ–ÊƒTƒCƒY
+public:		// é™çš„ãƒ¡ãƒ³ãƒ
+	// ç”»é¢ã‚µã‚¤ã‚º
 	static const int SCREEN_W = 1280;
 	static const int SCREEN_H = 720;
 
-private:	// Ã“Iƒƒ“ƒo
-	// Å‘å‰æ–ÊƒTƒCƒY
+private:	// é™çš„ãƒ¡ãƒ³ãƒ
+	// æœ€å¤§ç”»é¢ã‚µã‚¤ã‚º
 	static const int MAX_SCREEN_W = 1920;
 	static const int MAX_SCREEN_H = 1080;
 
-	// ‰æ–Êƒ‚[ƒh
-	static bool m_screenMode;
+	// ç”»é¢ãƒ¢ãƒ¼ãƒ‰
+	static bool s_screenMode;
 
-	//‰æ–Ê‚Ì”{—¦
-	static DirectX::SimpleMath::Vector2 m_windowMagnification;
+	//ç”»é¢ã®å€ç‡
+	static DirectX::SimpleMath::Vector2 s_windowMagnification;
 
 
 public:
@@ -62,11 +62,11 @@ public:
     // Properties
     void GetDefaultSize( int& width, int& height ) const;
 
-	//‰æ–Êƒ‚[ƒh‚ğŠl“¾‚·‚é
-	static void SetWindowMode(bool mode) { m_screenMode = mode; }
-	static bool GetWindowMode() { return m_screenMode; }
+	//ç”»é¢ãƒ¢ãƒ¼ãƒ‰ã‚’ç²å¾—ã™ã‚‹
+	static void SetWindowMode(bool mode) { s_screenMode = mode; }
+	static bool GetWindowMode() { return s_screenMode; }
 
-	static DirectX::SimpleMath::Vector2 GetWindowMagnification() { return m_windowMagnification; }
+	static DirectX::SimpleMath::Vector2 GetWindowMagnification() { return s_windowMagnification; }
 
 
 private:
@@ -85,19 +85,19 @@ private:
     // Rendering loop timer.
     DX::StepTimer                           m_timer;
 
-	//Ë‰es—ñ
+	//å°„å½±è¡Œåˆ—
 	std::unique_ptr<Projection>				m_projection;
 
-	// ƒRƒ‚ƒ“ƒXƒe[ƒg
+	// ã‚³ãƒ¢ãƒ³ã‚¹ãƒ†ãƒ¼ãƒˆ
 	std::unique_ptr<DirectX::CommonStates>	m_pState;
 
-	//ƒ}ƒEƒX
+	//ãƒã‚¦ã‚¹
 	std::unique_ptr<DirectX::Mouse>			m_pMouse;
 
-	//ƒL[ƒ{[ƒh
+	//ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰
 	std::unique_ptr<DirectX::Keyboard>		m_pKeyboard;
 
-	//ƒV[ƒ“ƒ}ƒl[ƒWƒƒ[
+	//ã‚·ãƒ¼ãƒ³ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼
 	std::unique_ptr<SceneManager>			m_pSceneManager;
 
 };

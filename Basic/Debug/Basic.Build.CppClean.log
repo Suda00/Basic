@@ -1,72 +1,62 @@
-c:\users\s192187\documents\visual studio 2015\projects\basic\debug\basic.lib
-c:\users\s192187\documents\visual studio 2015\projects\basic\debug\basic.exp
-c:\users\s192187\documents\visual studio 2015\projects\basic2\debug\basic.lib
-c:\users\s192187\documents\visual studio 2015\projects\basic2\debug\basic.exp
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\debug\basic.lib
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\debug\basic.exp
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\debug\basic.lib
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\debug\basic.exp
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\basic.pch
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\vc140.pdb
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\vc140.idb
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\pch.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\fixcamera.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\followcamera.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\scenemanager.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\debugcamera.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\deviceresources.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\game.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\gridfloor.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\main.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\gamescene.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\pausescene.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\titlescene.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic.pch
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\vc140.pdb
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\vc140.idb
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\pch.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\fixcamera.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\scenemanager.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\followcamera.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\debugcamera.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\deviceresources.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\game.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\object.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\gridfloor.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\main.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\collider.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\pausescene.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\titlescene.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\modelobject.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\gamescene.obj
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\move.obj
-c:\users\s192187\documents\visual studio 2015\projects\basic\debug\basic.ilk
-c:\users\s192187\documents\visual studio 2015\projects\basic\debug\basic.exe
-c:\users\s192187\documents\visual studio 2015\projects\basic\debug\basic.pdb
-c:\users\s192187\documents\visual studio 2015\projects\basic2\debug\basic.ilk
-c:\users\s192187\documents\visual studio 2015\projects\basic2\debug\basic.exe
-c:\users\s192187\documents\visual studio 2015\projects\basic2\debug\basic.pdb
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\debug\basic.ilk
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\debug\basic.exe
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\debug\basic.pdb
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\debug\basic.ilk
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\debug\basic.exe
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\debug\basic.pdb
-c:\users\s192187\documents\visual studio 2015\projects\basic\basic\debug\basic.exe.embed.manifest.res
-c:\users\s192187\documents\visual studio 2015\projects\basic2\basic\debug\basic.exe.embed.manifest.res
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\resource.res
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2\basic\debug\basic.exe.embed.manifest.res
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\resource.res
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic.exe.embed.manifest.res
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic.exe.embed.manifest
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic_manifest.rc
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic.tlog\basic.write.1u.tlog
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic.tlog\cl.command.1.tlog
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic.tlog\cl.read.1.tlog
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic.tlog\cl.write.1.tlog
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic.tlog\link.command.1.tlog
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic.tlog\link.read.1.tlog
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic.tlog\link.write.1.tlog
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic.tlog\rc.command.1.tlog
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic.tlog\rc.read.1.tlog
-c:\users\s192187\documents\visual studio 2015\projects\学習\basic2 - 予備\basic\debug\basic.tlog\rc.write.1.tlog
+c:\users\s192187\documents\github\basic\debug\basic.lib
+c:\users\s192187\documents\github\basic\debug\basic.exp
+c:\users\s192187\documents\github\basic\basic\debug\basic.pch.codeanalysis
+c:\users\s192187\documents\github\basic\basic\debug\vc140.pdb
+c:\users\s192187\documents\github\basic\basic\debug\vc140.idb
+c:\users\s192187\documents\github\basic\basic\debug\basic.pch.codeanalysisast
+c:\users\s192187\documents\github\basic\basic\debug\pch.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\pch.obj
+c:\users\s192187\documents\github\basic\basic\debug\basic.pch
+c:\users\s192187\documents\github\basic\basic\debug\debugcamera.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\deviceresources.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\game.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\gridfloor.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\main.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\parameter.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\parameter.obj
+c:\users\s192187\documents\github\basic\basic\debug\gridfloor.obj
+c:\users\s192187\documents\github\basic\basic\debug\deviceresources.obj
+c:\users\s192187\documents\github\basic\basic\debug\debugcamera.obj
+c:\users\s192187\documents\github\basic\basic\debug\game.obj
+c:\users\s192187\documents\github\basic\basic\debug\fixcamera.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\followcamera.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\collider.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\modelstorage.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\move.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\gameobject.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\object.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\objectpool.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\gamescene.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\pausescene.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\titlescene.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\titlescene.obj
+c:\users\s192187\documents\github\basic\basic\debug\pausescene.obj
+c:\users\s192187\documents\github\basic\basic\debug\gamescene.obj
+c:\users\s192187\documents\github\basic\basic\debug\objectpool.obj
+c:\users\s192187\documents\github\basic\basic\debug\object.obj
+c:\users\s192187\documents\github\basic\basic\debug\gameobject.obj
+c:\users\s192187\documents\github\basic\basic\debug\move.obj
+c:\users\s192187\documents\github\basic\basic\debug\modelstorage.obj
+c:\users\s192187\documents\github\basic\basic\debug\collider.obj
+c:\users\s192187\documents\github\basic\basic\debug\fixcamera.obj
+c:\users\s192187\documents\github\basic\basic\debug\followcamera.obj
+c:\users\s192187\documents\github\basic\basic\debug\scenemanager.nativecodeanalysis.xml
+c:\users\s192187\documents\github\basic\basic\debug\scenemanager.obj
+c:\users\s192187\documents\github\basic\basic\debug\main.obj
+c:\users\s192187\documents\github\basic\debug\basic.ilk
+c:\users\s192187\documents\github\basic\debug\basic.exe
+c:\users\s192187\documents\github\basic\debug\basic.pdb
+c:\users\s192187\documents\github\basic\basic\debug\resource.res
+c:\users\s192187\documents\github\basic\basic\debug\basic.exe.embed.manifest.res
+c:\users\s192187\documents\github\basic\basic\debug\basic.exe.embed.manifest
+c:\users\s192187\documents\github\basic\basic\debug\basic_manifest.rc
+c:\users\s192187\documents\github\basic\basic\debug\basic.tlog\basic.write.1u.tlog
+c:\users\s192187\documents\github\basic\basic\debug\basic.tlog\cl.command.1.tlog
+c:\users\s192187\documents\github\basic\basic\debug\basic.tlog\cl.read.1.tlog
+c:\users\s192187\documents\github\basic\basic\debug\basic.tlog\cl.write.1.tlog
+c:\users\s192187\documents\github\basic\basic\debug\basic.tlog\link.command.1.tlog
+c:\users\s192187\documents\github\basic\basic\debug\basic.tlog\link.read.1.tlog
+c:\users\s192187\documents\github\basic\basic\debug\basic.tlog\link.write.1.tlog
+c:\users\s192187\documents\github\basic\basic\debug\basic.tlog\rc.command.1.tlog
+c:\users\s192187\documents\github\basic\basic\debug\basic.tlog\rc.read.1.tlog
+c:\users\s192187\documents\github\basic\basic\debug\basic.tlog\rc.write.1.tlog

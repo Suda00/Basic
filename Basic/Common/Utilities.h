@@ -1,19 +1,19 @@
-#pragma once
+ï»¿#pragma once
 
 #include<algorithm>
 
 template<class T>
 inline constexpr const T& Clamp(const T& v, const T& low, const T high) 
 {
-	//maxŠÖ”Fv ‚ª low ‚æ‚è¬‚³‚¯‚ê‚Î low ‚ğA‘å‚«‚¯‚ê‚Î v ‚ğ•Ô‚·
-	//minŠÖ”F‹A‚Á‚Ä‚«‚½’l‚ª v ‚Å high ‚æ‚è‘å‚«‚¯‚ê‚Î high
+	//maxé–¢æ•°ï¼šv ãŒ low ã‚ˆã‚Šå°ã•ã‘ã‚Œã° low ã‚’ã€å¤§ãã‘ã‚Œã° v ã‚’è¿”ã™
+	//miné–¢æ•°ï¼šå¸°ã£ã¦ããŸå€¤ãŒ v ã§ high ã‚ˆã‚Šå¤§ãã‘ã‚Œã° high
 
-	//®F low <= v <= high ‚Ì”ÍˆÍ‚É‚·‚é
+	//å¼ï¼š low <= v <= high ã®ç¯„å›²ã«ã™ã‚‹
 
 	return std::min(std::max(v, low), high);
 }
 
 template<class T>
-inline constexpr const T& Leap(const T& start, const T& end, const T time) {
-	return start + t * (end - start);
+inline constexpr const T Leap(const T start, const T end, const T time) {
+	return (start + time * (end - start));
 }
