@@ -9,17 +9,22 @@
 #include "GameObject.h"
 
 
+
 class Object:public GameObject
 {
 private:
+	Bool m_ground;
+	Bool m_moving;			// 移動中か
+
 	DirectX::SimpleMath::Vector3 m_velocity;		//速度
 
 	DirectX::SimpleMath::Vector3 m_acceleration;	//加速度
 
 	int m_durability;								//耐久力:(HP)
 
-	float m_weight;									//重量
+	float m_mass;									//重量
 
+	float m_friction;	// 摩擦係数
 
 
 public:
@@ -28,10 +33,8 @@ public:
 
 public:
 
-	void Initialize() override;	//初期化
 	void Update(float elapsedTime) override;		//更新
 	void Render() override;		//描画
-	void Finalize() override;	//終了
 
 	void Move();								//移動
 
@@ -39,9 +42,20 @@ public:
 	void AddForce(float force, DirectX::SimpleMath::Quaternion angle);
 	void AddSpeed(DirectX::SimpleMath::Vector3 speed);
 
+	void Friction(Object* obj,float elapsedTime);
+
+	//　地面についているか(滑らせているのか)
+	Bool GetGround() { return m_ground; };
+
+	Bool GetMoving() { return m_moving; }
+
+	// 摩擦係数のセッターゲッター
+	void SetFriction(float friction) { m_friction = friction; }
+	float GetFriction() { return m_friction; }
+
 	//重量のセッターゲッター
-	void SetWeight(float weight) { m_weight = weight; }
-	float GetWeight() { return m_weight; }
+	void SetMass(float mass) { m_mass = mass; }
+	float GetMass() { return m_mass; }
 
 	// 移動ベクトルのゲッターセッター
 	void SetVelocity(DirectX::SimpleMath::Vector3 velocity) { m_velocity = velocity; }

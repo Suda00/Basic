@@ -18,3 +18,7 @@ GameObject::GameObject(const std::string& tag)
 }
 
 
+void GameObject::OnCollision(GameObject * object)
+{
+
+}

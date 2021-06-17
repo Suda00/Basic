@@ -10,10 +10,12 @@
 #include <SimpleMath.h>
 #include <string>
 
+#include "../BasicVariables.h"
+
 class GameObject
 {
 private:
-	bool m_valid;			// 有効か
+	Bool m_valid;			// 有効か
 	std::string m_tag;		//　当たり判定用タグ
 
 	DirectX::SimpleMath::Vector3 m_position;			//	位置
@@ -27,16 +29,13 @@ public:
 
 public:
 	//純粋仮想関数
-	virtual void Initialize() = 0;	//初期化
 	virtual void Update(float elapsedTime) = 0;		//更新
 	virtual void Render() = 0;		//描画
-	virtual void Finalize() = 0;	//終了
+
+	virtual void OnCollision(GameObject* object);
 
 
-	const bool IsValid() const;
-	const bool InValid() const;
-	void Activation();
-	void Invalidation();
+	Bool GetValid();
 
 	const std::string& GetTag() const;
 	const DirectX::SimpleMath::Vector3& GetPosition() const;
@@ -50,28 +49,13 @@ public:
 
 };
 
-// 有効である
-inline const bool GameObject::IsValid() const
+
+
+
+
+inline Bool GameObject::GetValid()
 {
 	return m_valid;
-}
-
-// 無効
-inline const bool GameObject::InValid() const
-{
-	return !m_valid;
-}
-
-// 有効化
-inline void GameObject::Activation()
-{
-	m_valid = true;
-}
-
-// 無効化
-inline void GameObject::Invalidation()
-{
-	m_valid = false;
 }
 
 /* ゲッター関数 */

@@ -163,17 +163,19 @@
     <ClInclude Include="DebugCamera.h" />
     <ClInclude Include="DeviceResources.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Game\BasicVariables.h" />
     <ClInclude Include="Game\Camera\FixCamera.h" />
     <ClInclude Include="Game\Camera\FollowCamera.h" />
+    <ClInclude Include="Game\Collision\BoxCollider.h" />
     <ClInclude Include="Game\Collision\Collider.h" />
+    <ClInclude Include="Game\Collision\SphereCollider.h" />
     <ClInclude Include="Game\DesignPattern\Singleton.h" />
     <ClInclude Include="Game\Model\ModelStorage.h" />
-    <ClInclude Include="Game\Move\Move.h" />
     <ClInclude Include="Game\Object\GameObject.h" />
     <ClInclude Include="Game\Object\Object.h" />
     <ClInclude Include="Game\Object\ObjectPool.h" />
+    <ClInclude Include="Game\Parameter.h" />
     <ClInclude Include="GridFloor.h" />
-    <ClInclude Include="Parameter.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\Scenes\GameScene.h" />
@@ -192,13 +194,14 @@
     <ClCompile Include="Game\Camera\FollowCamera.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../pch.h</PrecompiledHeaderFile>
     </ClCompile>
+    <ClCompile Include="Game\Collision\BoxCollider.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../pch.h</PrecompiledHeaderFile>
+    </ClCompile>
     <ClCompile Include="Game\Collision\Collider.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../pch.h</PrecompiledHeaderFile>
     </ClCompile>
+    <ClCompile Include="Game\Collision\SphereCollider.cpp" />
     <ClCompile Include="Game\Model\ModelStorage.cpp">
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../pch.h</PrecompiledHeaderFile>
-    </ClCompile>
-    <ClCompile Include="Game\Move\Move.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="Game\Object\GameObject.cpp">
@@ -211,9 +214,11 @@
     <ClCompile Include="Game\Object\ObjectPool.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../pch.h</PrecompiledHeaderFile>
     </ClCompile>
+    <ClCompile Include="Game\Parameter.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../pch.h</PrecompiledHeaderFile>
+    </ClCompile>
     <ClCompile Include="GridFloor.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Parameter.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

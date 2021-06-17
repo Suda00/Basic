@@ -35,11 +35,20 @@
     <Filter Include="DesignPattern">
       <UniqueIdentifier>{e8f71802-0451-4558-9586-bd70114a3c42}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Move">
-      <UniqueIdentifier>{68a0b3df-bfc4-4ada-a435-94229fa2d34b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Model">
       <UniqueIdentifier>{c22f338f-46e7-4d52-a52e-dde86b6daf34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基礎">
+      <UniqueIdentifier>{4dd846e1-b9a7-4fcd-94e6-a6989e120037}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基礎\パラメータ">
+      <UniqueIdentifier>{5016a97c-ed4f-4d23-aa74-7921b5916d86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collison\派生クラス">
+      <UniqueIdentifier>{cf3a2655-2e00-4b16-92b1-11e19e25acda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collison\マネージャー">
+      <UniqueIdentifier>{7d2f5de8-ba60-4d52-b177-498f2173e49a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -96,10 +105,6 @@
     <ClInclude Include="Game\Camera\FollowCamera.h">
       <Filter>Camera</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Move\Move.h">
-      <Filter>Move</Filter>
-    </ClInclude>
-    <ClInclude Include="Parameter.h" />
     <ClInclude Include="Game\Object\GameObject.h">
       <Filter>Object</Filter>
     </ClInclude>
@@ -108,6 +113,18 @@
     </ClInclude>
     <ClInclude Include="Game\Object\ObjectPool.h">
       <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Parameter.h">
+      <Filter>基礎\パラメータ</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\BasicVariables.h">
+      <Filter>基礎\パラメータ</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Collision\BoxCollider.h">
+      <Filter>Collison\派生クラス</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Collision\SphereCollider.h">
+      <Filter>Collison\派生クラス</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -147,10 +164,6 @@
     <ClCompile Include="Game\Camera\FollowCamera.cpp">
       <Filter>Camera</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Move\Move.cpp">
-      <Filter>Move</Filter>
-    </ClCompile>
-    <ClCompile Include="Parameter.cpp" />
     <ClCompile Include="Game\Object\GameObject.cpp">
       <Filter>Object</Filter>
     </ClCompile>
@@ -159,6 +172,15 @@
     </ClCompile>
     <ClCompile Include="Game\Object\ObjectPool.cpp">
       <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Parameter.cpp">
+      <Filter>基礎\パラメータ</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Collision\BoxCollider.cpp">
+      <Filter>Collison\派生クラス</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Collision\SphereCollider.cpp">
+      <Filter>Collison\派生クラス</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

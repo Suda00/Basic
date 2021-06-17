@@ -1,9 +1,7 @@
 ﻿  pch.cpp
-  Parameter.cpp
   Main.cpp
   GridFloor.cpp
   Game.cpp
-c:\users\s192187\documents\github\basic\basic\game.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
   DeviceResources.cpp
   DebugCamera.cpp
   C/C++ のコード分析を実行しています...
@@ -13,8 +11,10 @@ c:\users\s192187\documents\github\basic\basic\game.cpp : warning C4819: ファ�
   GameScene.cpp
   ObjectPool.cpp
   Object.cpp
+c:\users\s192187\documents\github\basic\basic\game\parameter.h : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
   GameObject.cpp
   Move.cpp
+c:\users\s192187\documents\github\basic\basic\game\move\move.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
   ModelStorage.cpp
   Collider.cpp
   FollowCamera.cpp
@@ -22,6 +22,10 @@ c:\users\s192187\documents\github\basic\basic\game.cpp : warning C4819: ファ�
   C/C++ のコード分析を実行しています...
   コードを生成中...
   SceneManager.cpp
+  Parameter.cpp
+c:\users\s192187\documents\github\basic\basic\game\parameter.h : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  C/C++ のコード分析を実行しています...
+  コードを生成中...
      ライブラリ C:\Users\s192187\Documents\GitHub\Basic\Debug\Basic.lib とオブジェクト C:\Users\s192187\Documents\GitHub\Basic\Debug\Basic.exp を作成中
   Basic.vcxproj -> C:\Users\s192187\Documents\GitHub\Basic\Debug\Basic.exe
   Basic.vcxproj -> C:\Users\s192187\Documents\GitHub\Basic\Debug\Basic.pdb (Full PDB)

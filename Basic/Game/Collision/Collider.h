@@ -1,15 +1,37 @@
-//
-//“–‚½‚è”»’è—p‚ÌŠî’êƒNƒ‰ƒX
-//y”h¶æzBox, Sphere, CapsuleyFXz
-//ì¬ÒF{“c@ƒqƒJƒ‹
-//ì¬“úF2021/05/26
-//XV“úF2021/05/26
+ï»¿//
+//å½“ãŸã‚Šåˆ¤å®šç”¨ã®åŸºåº•ã‚¯ãƒ©ã‚¹
+//ä½œæˆè€…ï¼šé ˆç”°ã€€ãƒ’ã‚«ãƒ«
 //
 #pragma once
+#include <SimpleMath.h>
+#include "../BasicVariables.h"
+
+class GameObject;
+class SphereCollider;
+class BoxCollider;
+
+
 class Collider
 {
+	GameObject* m_owner;
+	DirectX::SimpleMath::Vector3 m_offset;
+
 public:
-	Collider();
-	~Collider();
+	Collider(GameObject* owner);
+	virtual ~Collider() = default;
+
+public:
+	virtual bool IsCollided(const Collider*       collider) const = 0;
+	virtual bool IsCollided(const SphereCollider* collider) const;
+	virtual bool IsCollided(const BoxCollider*    collider) const;
+
+	void OnCollision(const Collider* object) const;
+
+	const DirectX::SimpleMath::Vector3 GetPosition() const;
+	const DirectX::SimpleMath::Vector3 GetOffset() const;
+
+	void  SetOffset(const DirectX::SimpleMath::Vector3& offset);
+
+
 };
 
