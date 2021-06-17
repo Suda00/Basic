@@ -1,32 +1,17 @@
-﻿  pch.cpp
+﻿  FBX\Enemy1.fbx
+  FBX\enemy_01.FBX
+  FBX\Floor.fbx
+  FBX\hammer.fbx
+  FBX\lance.fbx
+  FBX\Player.fbx
+  FBX\sword.fbx
+  pch.cpp
   Main.cpp
   GridFloor.cpp
+  SphereCollider.cpp
+c:\users\s192187\documents\github\ztdgame\basic\game\collision\spherecollider.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+c:\users\s192187\documents\github\ztdgame\basic\game\collision\spherecollider.cpp(43): fatal error C1010: プリコンパイル ヘッダーを検索中に不明な EOF が見つかりました。'#include "pch.h"' をソースに追加しましたか?
   Game.cpp
   DeviceResources.cpp
   DebugCamera.cpp
-  C/C++ のコード分析を実行しています...
   コードを生成中...
-  TitleScene.cpp
-  PauseScene.cpp
-  GameScene.cpp
-  ObjectPool.cpp
-  Object.cpp
-c:\users\s192187\documents\github\basic\basic\game\parameter.h : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  GameObject.cpp
-  Move.cpp
-c:\users\s192187\documents\github\basic\basic\game\move\move.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  ModelStorage.cpp
-  Collider.cpp
-  FollowCamera.cpp
-  FixCamera.cpp
-  C/C++ のコード分析を実行しています...
-  コードを生成中...
-  SceneManager.cpp
-  Parameter.cpp
-c:\users\s192187\documents\github\basic\basic\game\parameter.h : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  C/C++ のコード分析を実行しています...
-  コードを生成中...
-     ライブラリ C:\Users\s192187\Documents\GitHub\Basic\Debug\Basic.lib とオブジェクト C:\Users\s192187\Documents\GitHub\Basic\Debug\Basic.exp を作成中
-  Basic.vcxproj -> C:\Users\s192187\Documents\GitHub\Basic\Debug\Basic.exe
-  Basic.vcxproj -> C:\Users\s192187\Documents\GitHub\Basic\Debug\Basic.pdb (Full PDB)
-c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\stdio.h(1850): warning C28205: 'sprintf_s': _Success_ または _On_failure_ が無効なコンテキスト内で使用されています: _On_failure_ には _Success_ が必要です。
